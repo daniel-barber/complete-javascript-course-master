@@ -111,3 +111,101 @@ if (birthYear <= 2000) {
     century = 21;
 }
 console.log(century);
+
+// Type Conversion
+const inputYear = '1991'; // string
+console.log(inputYear + 18); // outputs 199118
+console.log(Number(inputYear) + 18); // use Number() to return String as a Number
+// original variable is still a String though!
+
+console.log(Number('Daniel')); // fails and returns NaN
+console.log(typeof NaN); // NaN is actually a number, just an invalid one
+
+console.log(String(23)); // Number to String
+
+// Type Coercion
+console.log('I am ' + 23 + ' years old'); // the + between strings triggers coercion of numbers to strings
+console.log('23' - '10' - 3); // the - converts strings to numbers!
+console.log('23' + '10' + 3);
+console.log('23' * '2' / '2') // * and / convert to numbers
+
+let n = '1' + 1; // coercion to string -> 11
+n = n - 1; // 11 - 1 = 10
+console.log(n); // 10
+
+let m = 2 + 3 + 4 + '5'; // 95
+let o = '10' - '4' - '3' - 2 + '5'; // 15
+
+// 5 falsy values are false when converted to a boolean:
+// 0, '', undefined, null, NaN
+// everything else will convert to true in a boolean
+console.log(Boolean(0)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean('Daniel')); // true
+console.log(Boolean({})); // true
+console.log(Boolean('')); // false
+
+// example
+const money = 0; // falsy
+if (money) {
+    console.log("Don't spend it all ;)");
+} else {
+    console.log("You should get a job!"); // this will be executed
+}
+
+let height; // undefined is falsy
+if (height) {
+    console.log("Yey height is defined");
+} else {
+    console.log("Height is UNDEFINED or 0"); // this will be executed
+}
+
+// Equality Operators === and ==
+const ageQ = 18;
+// always try to use ===
+if (ageQ === 18) console.log('You just became an adult (strict)'); // {} not needed on single line
+// == is a loose equality operator and converts, to be avoided!
+if (ageQ == 18) console.log('You just became an adult (loose)');
+
+// save a prompt input into a variable, but it stores as String. if Number wanted use Number() around prompt
+// const favourite = prompt("What's your favourite number?");
+// console.log(favourite);
+// console.log(typeof favourite);
+//
+// if (favourite == 23) { // "23" == 23 is true, but "23" === 23 is false
+//     console.log("Cool, 23 is an amazing number!");
+// } else if (favourite == 7) {
+//     console.log("7 is also cool");
+// } else console.log("Number is nor 23 or 7");
+//
+// // !== for not equals
+// if (Number(favourite) !== 23) console.log('Why not 23?');
+
+
+// Logical Operators
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision); // true
+console.log(hasDriversLicense || hasGoodVision); // true
+console.log(!hasDriversLicense); // false
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+
+// if (shouldDrive) {
+//     console.log('Sarah is able to drive.');
+// } else {
+//     console.log('Someone else should drive');
+// }
+
+const isTired = false; // C
+console.log(hasDriversLicense || hasGoodVision || isTired); // true
+console.log(hasDriversLicense && hasGoodVision && isTired); // false
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log('Sarah is able to drive.');
+} else {
+    console.log('Someone else should drive');
+}
+
+

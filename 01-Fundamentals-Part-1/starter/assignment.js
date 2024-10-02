@@ -38,11 +38,24 @@ if (population < populationAverage) {
 }
 
 // Predict the result of these 5 operations without executing them
-console.log('9' - '5'); // ->
-console.log('19' - '13' + '17'); // -> ?
-console.log('19' - '13' + 17); // -> ?
-console.log('123' < 57); // -> ?
-console.log(5 + 6 + '4' + 9 - 4 - 2); // -> ?
+console.log('9' - '5'); // -> 4
+console.log('19' - '13' + '17'); // -> 617
+console.log('19' - '13' + 17); // -> 23
+console.log('123' < 57); // -> false
+console.log(5 + 6 + '4' + 9 - 4 - 2); // -> 1143
+
+// Equality Operators
+// const numNeighbours = Number(prompt('How many neighbour countries does your country have?'));
+// if (numNeighbours === 1) {
+//     console.log('Only 1 border!');
+// } else if (numNeighbours > 1) {
+//     console.log('More than 1 border')
+// } else console.log('No borders');
+
+// Logical Operators
+if (language === "English" && population < 50_000_000 && !isIsland) {
+    console.log(`You should live in ${country} :)`);
+} else console.log(`${country} does not meet your criteria :(`);
 
 
 // Challenge 1
@@ -66,6 +79,22 @@ if (BMIMark > BMIJohn) {
 } else {
     console.log(`John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark})!`);
 }
+
+// Challenge 3
+/* Write your code below. Good luck! 🙂 */
+const scoreDolphins = (97 + 112 + 81) / 3;
+const scoreKoalas = (109 + 95 + 86) / 3;
+
+if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+    console.log("Dolphins win the trophy");
+}
+if (scoreDolphins < scoreKoalas && scoreKoalas >= 100) {
+    console.log("Koalas win the trophy");
+} else if (scoreDolphins === scoreKoalas && scoreDolphins >= 100 && scoreKoalas >= 100) {
+    console.log("Both win the trophy");
+} else console.log('No one wins the trophy');
+
+
 
 
 
