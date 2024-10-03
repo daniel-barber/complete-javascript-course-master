@@ -57,6 +57,32 @@ if (language === "English" && population < 50_000_000 && !isIsland) {
     console.log(`You should live in ${country} :)`);
 } else console.log(`${country} does not meet your criteria :(`);
 
+// Switch
+const newLanguage = 'chinese';
+switch (newLanguage) {
+    case 'chinese':
+    case 'mandarin':
+        console.log('MOST number of native speakers!');
+        break;
+    case 'spanish':
+        console.log('2nd place in number of native speakers');
+        break;
+    case 'english':
+        console.log('3rd place');
+        break;
+    case 'hindi':
+        console.log('Number 4');
+        break;
+    case 'arabic':
+        console.log('5th most spoken language');
+        break;
+    default:
+        console.log('Great language too :D');
+}
+
+// Conditional (Ternary) Operator
+console.log(`Portugal's population is ${population > 33_000_000 ? 'above' : 'below'} average`);
+
 
 // Challenge 1
 const massMark = 78;
@@ -93,6 +119,11 @@ if (scoreDolphins < scoreKoalas && scoreKoalas >= 100) {
 } else if (scoreDolphins === scoreKoalas && scoreDolphins >= 100 && scoreKoalas >= 100) {
     console.log("Both win the trophy");
 } else console.log('No one wins the trophy');
+
+// Challenge 4
+const bill = 275;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}.`);
 
 
 

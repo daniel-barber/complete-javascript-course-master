@@ -208,4 +208,60 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
     console.log('Someone else should drive');
 }
 
+// Switch statement
+const day = 'saturday';
+
+switch (day) {
+    case 'monday': // day === 'monday'
+        console.log('Plan course structure');
+        console.log('Go to coding meetup');
+        break;
+    case 'tuesday':
+        console.log('Prepare theory videos');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Write code example');
+        break;
+    case 'friday':
+        console.log('Record videos');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Enjoy the weekend :P');
+        break;
+    default:
+        console.log('Not a valid day!');
+}
+
+// Statements and Expressions
+// an expression produces a value
+// 3 + 4                    -> expression
+// 1999                     -> expression
+// true && false && !false  -> expression
+
+// if / else and switch case are statements and don't produce a value
+// statements are like sentences that translate actions
+
+// The Conditional (Tenary) Operator
+const ageT = 23;
+ageT >= 18 ? console.log('I like to drink wine🍷') : console.log('I like to drink water💦');
+
+// this is much simpler to write...
+const drink = ageT >= 18 ? 'wine' : 'water';
+
+// ...than this.
+let drink2;
+if (ageT >= 18) {
+    drink2 = 'wine';
+} else {
+    drink2 = 'water';
+}
+console.log(drink2);
+
+// can be used in Template Literal
+console.log(`I like to drink ${ageT >= 18 ? 'wine' : 'water'}`)
+
+// Javascript Versions
+//
 
