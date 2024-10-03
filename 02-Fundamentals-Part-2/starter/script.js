@@ -188,9 +188,60 @@ console.log(friends.indexOf('Bob')); // if not in Array will return -1
 console.log(friends.includes('Steven')); // returns true
 console.log(friends.includes('Bob')); // returns false
 
-if (friends.includes('Steven')){
+if (friends.includes('Steven')) {
     console.log('You have a friend called Steven');
 }
+
+
+// Objects
+
+// basic Array
+const jonasArray = [
+    'Jonas',
+    'Schmid',
+    2024 - 1997,
+    'teacher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+// creating an Object
+const jonasObj = {
+    firstName: 'Jonas',
+    lastName: 'Schmid',
+    age: 2024 - 1997,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+console.log(jonasObj);
+
+// getting content of Object
+console.log(jonasObj.lastName); // dot notation preferred
+console.log(jonasObj['lastName']); // bracket notation when you need to compute
+
+// use square brackets to build a key you want to compute
+const nameKey = 'Name';
+console.log(jonasObj['first' + nameKey]);
+console.log(jonasObj['last' + nameKey]);
+
+// handle object doesn't have the Key
+// const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends.')
+// if(jonasObj[interestedIn]){
+//     console.log(jonasObj[interestedIn]); // using the input to retrieve the output from the Object
+// } else {
+//     console.log('Wrong request!');
+// }
+
+// add key-value to object just by assigning them
+jonasObj.location = 'Portugal';
+jonasObj['twitter'] = '@hisTwitter';
+console.log(jonasObj);
+
+// Challenge
+// "Jonas has 3 friends and his best friend is called Michael"
+console.log(`${jonasObj.firstName} has ${jonasObj.friends.length} friends and his best friend is called ${jonasObj.friends[0]}.`);
+
+
+// Object Methods
 
 
 

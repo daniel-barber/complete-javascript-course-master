@@ -44,7 +44,7 @@ console.log(describePopulation('England', 12));
 // Arrays
 const populations = [3, 44, 69, 420];
 const countries = ['England', 'France', 'Portugal', 'Spain'];
-console.log(populations.length===4);
+console.log(populations.length === 4);
 const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[3])];
 console.log(percentages);
 
@@ -52,10 +52,23 @@ console.log(percentages);
 const neighbors = ['NotGermany', 'France', 'Italy', 'Austria'];
 neighbors.push('Utopia');
 neighbors.pop();
-if(!neighbors.includes('Germany')) console.log('Probably not a central european country :D');
+if (!neighbors.includes('Germany')) console.log('Probably not a central european country :D');
 neighbors[neighbors.indexOf('Italy')] = 'ItalianStallion';
 console.log(neighbors);
 
+// Objects
+const myCountry = {
+    country: 'Switzerland',
+    capital: 'Bern',
+    language: 'German',
+    population: 9,
+    neighbors: ['Germany', 'Italy', 'France', 'Austria']
+};
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${neighbors.length} neighboring countries and a capital called ${myCountry.capital}.`);
+myCountry.population += 2;
+console.log(myCountry.population);
+myCountry['population'] -= 2;
+console.log(myCountry.population);
 
 
 
