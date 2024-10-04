@@ -242,6 +242,175 @@ console.log(`${jonasObj.firstName} has ${jonasObj.friends.length} friends and hi
 
 
 // Object Methods
+const daniel = {
+    firstName: 'Daniel',
+    lastName: 'Barber',
+    birthYear: 1997,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    // assign function expression to property
+    // calcAge: function(){
+    //     console.log(this)
+    //     return 2037 - this.birthYear; // use this to use the don't repeat principle - not daniel.birthYear!
+    // },
+    //
+    // myCalcAge: function(currentYear){
+    //     return currentYear - this.birthYear; // access the variable directly from the object
+    // }
+
+    myCalcAge: function (currentYear) {
+        this.age = currentYear - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.myCalcAge(2024)}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} drivers license.`;
+    }
+};
+// access the variable
+// console.log(daniel.calcAge());
+
+console.log(daniel.age); // here it is undefined
+
+console.log(daniel.myCalcAge(2024)); // here we first call the function and it stores it in age
+
+// console.log(daniel['myCalcAge'](2024));
+
+// here the stored value can get called without compute
+console.log(daniel.age);
+console.log(daniel.age);
+console.log(daniel.age);
+
+// Challenge
+console.log(daniel.getSummary());
+
+
+// Loops
+
+// this is bad -> repeating code
+// console.log('Lifting weights repetition 1 🏋🏻‍♀️');
+// console.log('Lifting weights repetition 2 🏋🏻‍♀️');
+// console.log('Lifting weights repetition 3 🏋🏻‍♀️');
+// console.log('Lifting weights repetition 4 🏋🏻‍♀️');
+// console.log('Lifting weights repetition 5 🏋🏻‍♀️');
+
+// create a for loop
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep} 🏋🏻‍♀️`);
+}
+
+
+// For Loop with Array
+
+// basic Array
+const jonasArray1 = [
+    'Jonas',
+    'Schmid',
+    2024 - 1997,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+const types = []; // new empty loop
+
+for (let i = 0; i < jonasArray1.length; i++) {
+    console.log(jonasArray1[i], typeof jonasArray1[i]);
+    // types[i] = typeof jonasArray1[i]; // filling an array via index
+    types.push(typeof jonasArray1[i]); // filling an array via push
+}
+console.log(types);
+
+const years1 = [1991, 2007, 1969, 2020];
+const ages1 = [];
+for (let i = 0; i < years.length; i++) {
+    ages1.push(2024 - years1[i]);
+}
+console.log(ages1);
+
+// continue and break
+// continue is exit current iteration of loop
+console.log('--- ONLY STRINGS ---');
+for (let i = 0; i < jonasArray1.length; i++) {
+    if (typeof jonasArray1[i] !== 'string') continue; // goes to next iteration if type is not a string
+    console.log(jonasArray1[i], typeof jonasArray1[i]);
+}
+
+
+// break exits the loop completely
+console.log('--- BREAK WITH NUMBER ---');
+for (let i = 0; i < jonasArray1.length; i++) {
+    if (typeof jonasArray1[i] === 'number') break; // stops loop when number is found
+    console.log(jonasArray1[i], typeof jonasArray1[i]);
+}
+
+// looping backwards
+const jonasArray2 = [
+    'Jonas',
+    'Schmid',
+    2024 - 1997,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+// start from length - 1 and go down to = 0
+for (let i = jonasArray2.length - 1; i >= 0; i--) {
+    console.log(i, jonasArray2[i]);
+}
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+    console.log(`---- Starting exercise ${exercise}`)
+    for (let rep = 1; rep <= 5; rep++) {
+        console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋🏻‍♀️`);
+    }
+}
+
+// While Loop
+
+// create a while loop
+let rep = 0; // create counter outside while loop
+while (rep <= 10){
+    console.log(`Lifting weights repetition ${rep} 🏋🏻‍♀ (while)️`);
+    rep++; // increment inside loop
+}
+
+// create a random dice roll
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6){
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('Loop is about to end...');
+}
+console.log(`You rolled a ${dice}`); // needed at the end because last dice isn't printed -> solve with do-while
+
+do {
+    dice = Math.trunc(Math.random() * 6) + 1;
+    console.log(`You rolled a ${dice}`);
+    if (dice === 6) console.log('Loop is done.');
+} while (dice !== 6);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
